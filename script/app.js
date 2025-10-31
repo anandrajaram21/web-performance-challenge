@@ -32,11 +32,20 @@ const cookieLayerInit = () => {
 };
 
 const initApp = () => {
-  const lazyLoadInstance = new LazyLoad();
-
   dynamicContent();
   cookieLayerInit();
-  lazyLoadInstance.update();
+
+  // Initialize LazyLoad only if library is loaded
+  if (typeof LazyLoad !== 'undefined') {
+    const lazyLoadInstance = new LazyLoad();
+    lazyLoadInstance.update();
+  }
 };
 
-initApp();
+// Use requestIdleCallback to defer non-critical initialization
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(initApp);
+} else {
+  // Fallback for browsers that don't support requestIdleCallback
+  setTimeout(initApp, 1);
+}
