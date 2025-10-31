@@ -30,7 +30,7 @@ const cookieLayerInit = () => {
 
   // Handle accept button click
   acceptButton.addEventListener('click', () => {
-    cookieLayer.classList.add('cookieLayer__base--accepted');
+    cookieLayer.classList.add('cookieLayer__base--hidden');
     document.body.classList.remove('no-scroll');
   });
 };
