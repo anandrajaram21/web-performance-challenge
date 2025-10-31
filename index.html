@@ -8,9 +8,6 @@
   <link rel="preload" href="fonts/alegreya-v29-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/alegreya-v29-latin-900.woff2" as="font" type="font/woff2" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/vuex"></script>
   <script>
     // advertisment mock
     const initAd = () => {
@@ -30,9 +27,6 @@
     });
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js'></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
   <title>The Rum Diary</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
@@ -87,8 +81,7 @@
           </div>
           <div class="swiper-text">Local restaurants finally optimising time to first bite</div>
         </div>
-        <script src="script/carousel.js"></script>
-        
+
         <div class="hero__teaser div2">
           <img src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" data-src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&h=400&q=100" class="hero__img lazy">
           <div class="hero__teaserText">Top 10 waterfalls to analyse this week</div>
@@ -122,9 +115,6 @@
       
       <div class="main__weather main__section">
         <a class="weatherwidget-io" href="https://forecast7.com/en/48d1411d58/munich/" data-label_1="MUNICH" data-label_2="WEATHER" data-theme="original" >MUNICH WEATHER</a>
-        <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://blackhole.webpagetest.org/';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-        </script>
       </div>
       
       <div class="main__video main__section">
@@ -160,5 +150,14 @@
       <div class="footer__sponsor">Powered by <a href="https://www.netcentric.biz/">Cognizant Netcentric</a></div>
     </div>
   </div>
-  <script src="script/app.js"></script>
+
+  <!-- JavaScript loaded at end with defer for non-blocking parsing -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+  <script defer src="https://unpkg.com/vuex"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+  <script defer src="script/carousel.js"></script>
+  <script defer src="script/app.js"></script>
 </body>
+</html>
