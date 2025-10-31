@@ -3,7 +3,8 @@
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/index.css" />
-  <link rel="preload" href="background.jpg" as="image">
+  <link rel="preload" href="assets/bite.webp" as="image" type="image/webp">
+  <link rel="preload" href="logo.svg" as="image" type="image/svg+xml">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <link rel="preload" href="fonts/alegreya-v29-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/alegreya-v29-latin-900.woff2" as="font" type="font/woff2" crossorigin>
@@ -20,7 +21,7 @@
   <header class="header__base">
     <div class="header__content">
       <a class="header__logo" href="#">
-        <img class="header__image" src="./logo.png">
+        <img class="header__image" src="./logo.svg" alt="The Rum Diary logo" width="150" height="50">
       </a>
       <div class="header__navigation">
         <ul class="navigation__list">
@@ -57,7 +58,7 @@
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide lazy"><img src="assets/bite.webp" alt="Local restaurants optimizing time to first bite"></div>
+            <div class="swiper-slide"><img src="assets/bite.webp" alt="Local restaurants optimizing time to first bite" width="600" height="400"></div>
             <div class="swiper-slide"></div>
             <div class="swiper-slide"></div>
           </div>
@@ -65,30 +66,30 @@
         </div>
 
         <div class="hero__teaser div2">
-          <img src="assets/waterfalls.webp" alt="Top 10 waterfalls to analyse this week" class="hero__img lazy">
+          <img src="assets/waterfalls.webp" alt="Top 10 waterfalls to analyse this week" class="hero__img" width="393" height="195" loading="lazy">
           <div class="hero__teaserText">Top 10 waterfalls to analyse this week</div>
         </div>
         <div class="hero__teaser div3">
-          <img src="assets/bounce.webp" alt="Bouncing rates increased significantly last week" class="hero__img lazy">
+          <img src="assets/bounce.webp" alt="Bouncing rates increased significantly last week" class="hero__img" width="650" height="300" loading="lazy">
           <div class="hero__teaserText">Bouncing rates increased signifincantly last week</div>
         </div>
       </div>
 
       <div class="main__teasers main__section">
         <article class="teaser__base">
-          <img class="teaser__image" src="assets/bite.webp" alt="First Party article"><hr>
+          <img class="teaser__image" src="assets/bite.webp" alt="First Party article" width="600" height="400" loading="lazy"><hr>
           <h1 class="teaser__title">First Party</h1>
           <div class="teaser__text"></div>
           <button class="teaser__link">Read more</button>
         </article>
         <article class="teaser__base">
-          <img class="teaser__image" src="assets/waterfalls.webp" alt="Second Party article"><hr>
+          <img class="teaser__image" src="assets/waterfalls.webp" alt="Second Party article" width="393" height="195" loading="lazy"><hr>
           <h1 class="teaser__title">Second Party</h1>
           <div class="teaser__text"></div>
           <button class="teaser__link">Read more</button>
         </article>
         <article class="teaser__base">
-          <img class="teaser__image" src="assets/bounce.webp" alt="Third Party article"><hr>
+          <img class="teaser__image" src="assets/bounce.webp" alt="Third Party article" width="650" height="300" loading="lazy"><hr>
           <h1 class="teaser__title">Third Party</h1>
           <div class="teaser__text"></div>
           <button class="teaser__link">Read more</button>
