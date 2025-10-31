@@ -37,8 +37,14 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"></noscript>
 </head>
 <body>
-  <div id="cookie-vue">
-    <cookie-layer class="cookieLayer__base" v-show="displayCookieBox" v-on:accept="acceptCookies()"/>
+  <div id="cookie-layer" class="cookieLayer__base">
+    <div class="cookieLayer__content">
+      <h2 class="cookieLayer__title">Do you like cookies ?</h2>
+      <p class="cookieLayer__text">This is the best chocolate chip cookies recipe ever! No funny ingredients, no chilling time, etc. Just a simple, straightforward, amazingly delicious, doughy yet still fully cooked, chocolate chip cookie that turns out perfectly every single time!</p>
+      <p class="cookieLayer__text">The first step in making these easy chocolate chip cookies to to combine the dry ingredients in a medium size bowl. Next, cream together butter and sugars. Add the eggs & vanilla and beat to combine. Add dry ingredients and stir until just combined. Then add the chocolate chips and beat until they are evenly distributed throughout the dough.</p>
+      <button class="cookieLayer__button" id="accept-cookies">I solemny swear I will bake these cookies</button>
+      <div class="cookieLayer__disclaimer">This box is made using Vanilla JavaScript and is super fast!</div>
+    </div>
   </div>
   <header class="header__base">
     <div class="header__content">
@@ -198,8 +204,6 @@
 
   <!-- JavaScript loaded at end with defer for non-blocking parsing -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
-  <script defer src="https://unpkg.com/vuex"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
   <script defer src="script/carousel.js"></script>
