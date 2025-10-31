@@ -1,5 +1,5 @@
 .cookieLayer__base {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -7,7 +7,7 @@
   background-color: var(--background-color);
   padding: 100px;
   font-family: 'Architects Daughter', serif;
-  z-index: 2;
+  z-index: 1000;
   box-shadow: 0 5px 3px -2px #e4e4e4
 }
 
