@@ -13,8 +13,10 @@ const dynamicContent = () => {
   const teasers = document.querySelectorAll('.teaser__text');
   const marqueeBar = document.querySelector('marquee');
 
-  // mock content delay
-  setTimeout(() => marqueeBar.innerHTML = CONTENT_BREAKING_NEWS, 3000);
+  // Load content immediately
+  if (marqueeBar) {
+    marqueeBar.innerHTML = CONTENT_BREAKING_NEWS;
+  }
 
   // create dynamic content
   teasers.forEach((teaser, index) => {

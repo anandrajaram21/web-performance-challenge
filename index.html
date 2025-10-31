@@ -8,24 +8,6 @@
   <link rel="preload" href="fonts/alegreya-v29-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/alegreya-v29-latin-900.woff2" as="font" type="font/woff2" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-  <script>
-    // advertisment mock
-    const initAd = () => {
-      const adSpace = document.querySelector('.main__advertising');
-      const gif = '<div style="width:400px;max-width:100%;"><div style="height:0;padding-bottom:52.4%;position:relative;"><iframe width="500" height="262" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/6wy03z"></iframe></div></div>';
-      setTimeout(() => adSpace.innerHTML = gif, 3000);
-    };
-
-    // async CSS
-    function loadMobileCSS() {
-      $('head').append(`<link rel="stylesheet" type="text/css" href="styles/mobile.css">`);
-    };
-
-    window.addEventListener('load', () => {
-      initAd();
-      loadMobileCSS();
-    });
-  </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <title>The Rum Diary</title>
   <meta charset="UTF-8" />
@@ -150,6 +132,46 @@
       <div class="footer__sponsor">Powered by <a href="https://www.netcentric.biz/">Cognizant Netcentric</a></div>
     </div>
   </div>
+
+  <!-- Inline optimized scripts -->
+  <script>
+    // Load mobile CSS asynchronously
+    function loadMobileCSS() {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'styles/mobile.css';
+      document.head.appendChild(link);
+    }
+
+    // Advertisement loader with Intersection Observer for better performance
+    function initAd() {
+      const adSpace = document.querySelector('.main__advertising');
+      if (!adSpace) return;
+
+      const gif = '<div style="width:400px;max-width:100%;"><div style="height:0;padding-bottom:52.4%;position:relative;"><iframe width="500" height="262" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/6wy03z"></iframe></div></div>';
+
+      // Use Intersection Observer to load ad only when visible
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          adSpace.innerHTML = gif;
+          observer.disconnect();
+        }
+      }, { rootMargin: '50px' });
+
+      observer.observe(adSpace);
+    }
+
+    // Initialize on DOMContentLoaded for faster execution
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        initAd();
+        loadMobileCSS();
+      });
+    } else {
+      initAd();
+      loadMobileCSS();
+    }
+  </script>
 
   <!-- JavaScript loaded at end with defer for non-blocking parsing -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
