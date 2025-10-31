@@ -25,13 +25,9 @@ const cookieLayerInit = () => {
 
   if (!cookieLayer || !acceptButton) return;
 
-  // Show cookie layer and prevent scrolling
-  document.body.classList.add('no-scroll');
-
   // Handle accept button click
   acceptButton.addEventListener('click', () => {
     cookieLayer.classList.add('cookieLayer__base--hidden');
-    document.body.classList.remove('no-scroll');
   });
 };
 
