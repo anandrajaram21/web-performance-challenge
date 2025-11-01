@@ -4,6 +4,14 @@
     padding-bottom: 30px;
   }
 
+  .main__advertising {
+    min-height: 170px;
+  }
+
+  .main__news {
+    height: 60px;
+  }
+
   .main__hero {
     display: flex;
     flex-direction: column;
@@ -14,20 +22,12 @@
     height: inherit;
   }
 
-  .swiper-text {
-    top: 50%;
-  }
-
-  .main__teasers {
+  .main__video {
+    display: flex;
     flex-direction: column;
-
   }
 
-  .teaser__base {
-    width: 100%;
-  }
-
-  .cookieLayer__base {
-    bottom: 0;
+  .video__base {
+    margin-bottom: 20px;
   }
 }
