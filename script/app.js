@@ -1,17 +1,30 @@
-const CONTENT_BREAKING_NEWS = "BREAKING NEWS: 5 people arrested for non designing responsively ***** Sprite popularity drops even further after new, less sugary, drink introduction.*****"
+const CONTENT_BREAKING_NEWS = "BREAKING NEWS: 5 people arrested for non designing responsively."
 const CONTENT_ARTICLE_TEASERS = [
   "This is an article about first party that happened this weekend",
   "This is an article about second party that happened this weekend",
   "This is an article about third party that happened this weekend" ];
 
+const closeBox = () => {
+  document.body.classList.remove('no-scroll');
+  document.querySelector('.cookieLayer__base').classList.add('cookieLayer__base--hidden');
+};
+
+const acceptCookies = () => {
+  // do sth to accept
+  closeBox();
+};
+
+const declineCookies = () => {
+  // do sth to decline
+  closeBox();
+};
+
 const dynamicContent = () => {
   const teasers = document.querySelectorAll('.teaser__text');
-  const marqueeBar = document.querySelector('marquee');
+  const marqueeBar = document.querySelector('#breaking-news');
 
-  // Load content immediately
-  if (marqueeBar) {
-    marqueeBar.innerHTML = CONTENT_BREAKING_NEWS;
-  }
+  // mock content delay
+  setTimeout(() => marqueeBar.innerHTML = CONTENT_BREAKING_NEWS, 3000);
 
   // create dynamic content
   teasers.forEach((teaser, index) => {
@@ -20,32 +33,29 @@ const dynamicContent = () => {
 };
 
 const cookieLayerInit = () => {
-  const cookieLayer = document.getElementById('cookie-layer');
-  const acceptButton = document.getElementById('accept-cookies');
+  const template = `<div class="cookieLayer__base">
+    <div class="cookieLayer__content">
+      <h2 class="cookieLayer__title">Do you like cookies ?</h2>
+      <button class="cookieLayer__button" onclick="acceptCookies()">Cookie monster in da house</button>
+      <button class="cookieLayer__button" onclick="declineCookies()">Nope, not a fan</button>
+    </div>
+  </div>`;
 
-  if (!cookieLayer || !acceptButton) return;
-
-  // Handle accept button click
-  acceptButton.addEventListener('click', () => {
-    cookieLayer.classList.add('cookieLayer__base--hidden');
-  });
+  const cookieNotice = document.querySelector('#cookie-notice');
+  cookieNotice.innerHTML = template;
 };
 
-const initApp = () => {
-  dynamicContent();
-  cookieLayerInit();
-
-  // Initialize LazyLoad only if library is loaded
-  if (typeof LazyLoad !== 'undefined') {
-    const lazyLoadInstance = new LazyLoad();
-    lazyLoadInstance.update();
+const layoutTrashing = (n) => {
+  for (let i = 0; i < n; i++) {
+    const container = document.querySelector('header');
+    console.log(container.clientTop);
   }
 };
 
-// Use requestIdleCallback to defer non-critical initialization
-if ('requestIdleCallback' in window) {
-  requestIdleCallback(initApp);
-} else {
-  // Fallback for browsers that don't support requestIdleCallback
-  setTimeout(initApp, 1);
-}
+const initApp = () => {
+  layoutTrashing(20);
+  dynamicContent();
+  cookieLayerInit();
+};
+
+initApp();

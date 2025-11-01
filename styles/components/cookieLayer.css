@@ -1,13 +1,13 @@
 .cookieLayer__base {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   color: var(--color-white);
   background-color: var(--background-color);
-  padding: 100px;
-  font-family: 'Architects Daughter', serif;
-  z-index: 1000;
+  padding: 20px;
+  text-align: center;
+  z-index: 2;
   box-shadow: 0 5px 3px -2px #e4e4e4
 }
 
@@ -16,12 +16,8 @@
 }
 
 .cookieLayer__title {
-  font-size: 35px;
-  margin-bottom: 30px;
-}
-
-.cookieLayer__text {
-  margin-bottom: 20px;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 
 .cookieLayer__disclaimer {

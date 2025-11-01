@@ -1,14 +1,9 @@
-/* generics */
 @import url(generics.css);
-
-/* variables */
 @import url(variables.css);
-
-/* main */
 @import url(main.css);
-
-/* components */
-@import url(components.css);
-
-/* fonts */
 @import url(fonts.css);
+
+@import url(components/header.css);
+@import url(components/logo.css);
+@import url(components/hero.css);
+@import url(components/cookieLayer.css);

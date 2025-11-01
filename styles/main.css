@@ -7,12 +7,18 @@ body {
   padding: 30px 100px;
   display: flex;
   justify-content: space-around;
+  min-height: 270px;
 }
 
 .main__content {
   padding: 30px;
   margin: auto;
   max-width: 1200px;
+}
+
+.main__news {
+  text-align: center;
+  height: 30px;
 }
 
 .main__hero {
